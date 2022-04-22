@@ -53,11 +53,15 @@ class PoemReader:
 
 def save_poems(poems):
 
-    file_count = 1
+    file_count = 0
 
     for p in poems:
-        fname = f"{file_count:3d}"
+        file_count += 1
+        fname = "poems/%03d - %s" % (file_count, p.title)
         print(fname)
+        
+        with open(fname, 'w') as f:
+            f.writelines(p.lines)
 
 
 
