@@ -4,7 +4,7 @@ class Poem:
         self.lines = []
 
     def add_line(self, l):
-        self.lines.append(l)
+        self.lines.append(l+"\n")
 
     def dump(self):
         print("> %s" % self.title)
