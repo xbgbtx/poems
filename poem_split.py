@@ -40,6 +40,7 @@ class PoemReader:
                     poem = Poem(title)
                     continue
                 else:
+                    self.current_line -= 1
                     break
 
             if poem is None:
@@ -54,8 +55,8 @@ def main():
 
     pr = PoemReader()
         
-    poem = pr.read_next()
-    poem.dump()
+    while (poem := pr.read_next()) is not None:
+        poem.dump()
 
 if __name__ == "__main__":
     main()
