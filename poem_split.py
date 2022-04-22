@@ -51,12 +51,26 @@ class PoemReader:
         return poem
 
 
+def save_poems(poems):
+
+    file_count = 1
+
+    for p in poems:
+        fname = f"{file_count:3d}"
+        print(fname)
+
+
+
 def main():
 
     pr = PoemReader()
+    poems = []
         
     while (poem := pr.read_next()) is not None:
-        poem.dump()
+        poems.append(poem)
+
+    save_poems(poems)
 
 if __name__ == "__main__":
     main()
+
