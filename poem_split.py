@@ -3,6 +3,8 @@ class Poem:
         self.title = title
         self.lines = []
 
+        self.lines.append(title+"\n\n")
+
     def add_line(self, l):
         self.lines.append(l+"\n")
 
